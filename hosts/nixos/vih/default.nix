@@ -7,5 +7,6 @@
     ./packages
   #./utils.nix
   ./apple 
+  ./shells 
   ];
 }
