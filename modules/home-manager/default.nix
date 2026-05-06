@@ -1,41 +1,36 @@
 { config, pkgs, ... }:
 {
-    imports = [
-     ./shells/zsh.nix
-     ./coding/vscode.nix
-     ./ssh.nix
-      ../../configuration.nix
-     ];
+  imports = [
+    ../../shells/zsh.nix
+    ../../coding/vscode.nix
+    ../../ssh.nix
+  ];
 
   home.username = "vih";
   home.homeDirectory = "/home/vih";
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
-    
     git
 
-    #Video
+    # Video
     mpv
     ffmpeg-full
     
-    #Chat
+    # Chat
     discord
 
-    #Games
+    # Games
     steam
+  ];
 
-
-      home.sessionVariables = {
-    # EDITOR = "nvim";
+  home.sessionVariables = {
+    EDITOR = "nvim";
   };
 
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   nixpkgs = {
-  config.allowUnfree = true;
-};
-
-  ];
+    config.allowUnfree = true;
+  };
 }
