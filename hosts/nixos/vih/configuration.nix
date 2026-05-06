@@ -179,7 +179,7 @@ environment.systemPackages = [
 
   #iPod
   
-  pkgs.git
+  #pkgs.git
 
 ];
 #Locale

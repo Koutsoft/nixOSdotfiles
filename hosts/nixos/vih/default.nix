@@ -6,5 +6,6 @@
     ./networking
     ./packages
   #./utils.nix
+  ./apple 
   ];
 }

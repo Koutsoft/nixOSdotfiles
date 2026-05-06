@@ -1,2 +1,2 @@
 { config, pkgs, ... }:
-{imports = [ ./gaming.nix ];}
+{imports = [ ./gaming.nix ./utils.nix ];}
