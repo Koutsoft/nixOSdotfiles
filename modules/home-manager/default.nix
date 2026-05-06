@@ -20,8 +20,6 @@
     # Chat
     discord
 
-    # Games
-    steam
   ];
 
   home.sessionVariables = {
