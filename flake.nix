@@ -25,6 +25,7 @@
     ...
   }:
   {
+    homeManagerModules = import ./common/homeManagerModules;
     nixosConfigurations = import ./hosts {
       inherit inputs;
 
