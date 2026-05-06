@@ -41,12 +41,12 @@
       azahar # 3ds
     ];
     games = with unstable; [ dwarf-fortress prismlauncher edopro ];
-    launchers = with unstable; [ lutris ];
+    #launchers = with unstable; [ lutris ];
     sysDeps = with pkgs; [ dotnet-sdk wineWowPackages.stagingFull winetricks ];
   in builtins.concatLists [
     emulators
     games
-    launchers
+    #launchers
     wineDeps
     sysDeps
   ];

@@ -3,6 +3,6 @@
 {
   imports = [
     ../../configuration.nix
-    ./packages
+    ./packages/default.nix
   ];
 }
