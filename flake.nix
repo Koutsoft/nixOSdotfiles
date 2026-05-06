@@ -1,54 +1,38 @@
 {
-  description = "My first flake!";
+  description = "My NixOS config (advanced multi-host)";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
-  let
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nix-index-database,
+    ...
+  }:
+  {
+    nixosConfigurations = import ./hosts {
+      inherit inputs;
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+      # nomes semânticos
+      stable = nixpkgs;
+      unstable = nixpkgs-unstable;
 
-    unstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-
-  in {
-    nixosConfigurations = {
-      nixos = lib.nixosSystem {
-        inherit system pkgs;
-
-        # 👇 AQUI ESTÁ O QUE FALTAVA
-        specialArgs = {
-          inherit unstable;
-        };
-
-        modules = [
-          ./hosts/nixos
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-
-            home-manager.extraSpecialArgs = {
-              inherit unstable;
-            };
-
-            home-manager.users.vih = import ./modules/home-manager;
-          }
-        ];
-      };
+      inherit home-manager nix-index-database;
     };
   };
 }
