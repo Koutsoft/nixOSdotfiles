@@ -24,15 +24,23 @@
         nixosConfigurations = {
             nixos = lib.nixosSystem{
                 inherit system pkgs;
-                modules = [./configuration.nix];
+                modules = [
+  ./hosts/nixos
+
+  home-manager.nixosModules.home-manager
+  {
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+
+    home-manager.extraSpecialArgs = {
+      inherit unstable;
+    };
+
+    home-manager.users.vih = import ./modules/home-manager;
+  }
+];
             };
         };
-        homeConfigurations = {
-            vih = home-manager.lib.homeManagerConfiguration {
-                pkgs = pkgs;
-                extraSpecialArgs = { inherit unstable; };
-                modules = [./home.nix];
-            };
-        };
+
     };
 }
