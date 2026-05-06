@@ -1,7 +1,7 @@
 {
-  imports = [ ./firewall.nix ./ssh.nix  ./dns ./bluetooth.nix ];
+  imports = [ ./firewall.nix ./ssh.nix   ./bluetooth.nix  ];
   networking = {
-    hostName = "shizuku";
+    hostName = "vih";
     networkmanager.enable = true;
   };
 }

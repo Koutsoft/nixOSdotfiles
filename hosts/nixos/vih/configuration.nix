@@ -25,7 +25,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages;
-   networking.hostName = "nixos"; # Define your hostname.
+   #networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -151,6 +151,8 @@ services.xserver = {
     home = "/home/vih";
   };
 
+  nixpkgs.config.allowUnfree = true;
+
 #timezone
 time.timeZone = "America/Sao_Paulo";
 
@@ -176,12 +178,9 @@ environment.systemPackages = [
   pkgs.usbutils
 
   #iPod
-  pkgs.libimobiledevice
-  pkgs.ifuse
-  pkgs.gvfs
-  pkgs.hfsprogs
-  pkgs.pciutils
-  pkgs.libgpod
+  
+  pkgs.git
+
 ];
 #Locale
 
