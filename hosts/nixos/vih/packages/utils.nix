@@ -12,8 +12,8 @@ in
     osx-kvm = with pkgs; [ dmg2img libguestfs p7zip ];
   in with pkgs;
     let 
-    nix-alien = inputs.nix-alien.packages.${system}.nix-alien;
-    tundra = inputs.tundra.packages.${system};
+    #nix-alien = inputs.nix-alien.packages.${system}.nix-alien;
+   # tundra = inputs.tundra.packages.${system};
     in [
       swww
       wl-clipboard
@@ -55,7 +55,7 @@ in
       mlt
       unstable.xwayland-satellite
       parted
-      nix-alien
+      #nix-alien
       vulkan-tools
       yt-dlp
 
@@ -73,13 +73,13 @@ in
       wmctrl
       p7zip
       nix-tree
-      ffmpeg
+      ffmpeg-full
       (unstable.wrapOBS { plugins = with unstable.obs-studio-plugins; [ wlrobs obs-pipewire-audio-capture obs-vaapi obs-vkcapture ]; })
       xorg.xinit
       charm-freeze
       # override `coreutils`'s binaries.
       (lib.hiPrio uutils-coreutils-noprefix)
-      tundra.textract-bin
+      #tundra.textract-bin
       hexyl
       qrrs
       lm_sensors
