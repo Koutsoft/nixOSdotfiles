@@ -87,6 +87,9 @@ in
       tree
 
       fzf
+      gnumake
+      gcc
+      cmake
 
       nodejs_22
       cargo

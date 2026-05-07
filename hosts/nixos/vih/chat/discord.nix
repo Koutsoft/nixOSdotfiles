@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
-[
-
-  pkgs.discord
-  # adicione outros aqui
-]
+{
+  environment.systemPackages = [
+    pkgs.discord
+  ];
+}
