@@ -4,13 +4,17 @@
 
 { config, lib, pkgs, ... }:
 
+
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      
-    ];
-  # Use the systemd-boot EFI boot loader.
+        	 ];
+    home-manager.useUserPackages = true;
+    home-manager.useGlobalPkgs = true;
+    home-manager.backupFileExtension = "backup";
+    home-manager.users.vih = import ../../../common/homeManagerModules/home.nix; 
+      # Use the systemd-boot EFI boot loader.
 
   boot.supportedFilesystems = [ "hfsplus" ];
   boot.loader.systemd-boot.enable = false;
