@@ -84,6 +84,13 @@ in
       qrrs
       lm_sensors
 
+      tree
+
+      fzf
+      gnumake
+      gcc
+      cmake
+
       nodejs_22
       cargo
       cargo-info

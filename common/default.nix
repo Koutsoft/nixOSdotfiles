@@ -1,0 +1,3 @@
+{
+  alacratty = ./alacratty;
+}
