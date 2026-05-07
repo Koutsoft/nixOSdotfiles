@@ -84,6 +84,10 @@ in
       qrrs
       lm_sensors
 
+      tree
+
+      fzf
+
       nodejs_22
       cargo
       cargo-info

@@ -6,7 +6,8 @@
     ./networking
     ./packages
   #./utils.nix
-  ./apple 
+  ./apple
+  ./chat
   #./shells 
   ];
 }
