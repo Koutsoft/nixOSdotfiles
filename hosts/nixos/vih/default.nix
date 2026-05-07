@@ -8,6 +8,7 @@
   #./utils.nix
   ./apple
   ./chat
-  #./shells 
+  #./shells
+  ./hardware
   ];
 }
