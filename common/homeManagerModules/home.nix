@@ -5,6 +5,7 @@
 imports = [
 ./alacritty
 ./startship
+./coding
 ];
 
   home.username = "vih";
