@@ -144,7 +144,7 @@ environment.systemPackages = [
   pkgs.neovim
   pkgs.fastfetch
   pkgs.hyfetch
-  pkgs.firefox
+ 
 
   pkgs.kdePackages.spectacle	
   pkgs.kdePackages.bluedevil
