@@ -6,6 +6,7 @@ imports = [
 ./alacritty
 ./startship
 ./coding/vscode/vscode.nix
+./browser/firefox/firefox.nix
 ];
 
   home.username = "vih";
