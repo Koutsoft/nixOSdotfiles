@@ -2,6 +2,7 @@
 { ... }: {
   imports = [
     ./keyboard.nix
+    ./boot 
     ./hardware-configuration.nix
   ];
 }

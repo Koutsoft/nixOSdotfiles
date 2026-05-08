@@ -8,27 +8,16 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      #./hardware-configuration.nix
         	 ];
     home-manager.useUserPackages = true;
     home-manager.useGlobalPkgs = true;
     home-manager.backupFileExtension = "backup";
     home-manager.users.vih = import ../../../common/homeManagerModules/home.nix; 
-      # Use the systemd-boot EFI boot loader.
-
-  boot.supportedFilesystems = [ "hfsplus" ];
-  boot.loader.systemd-boot.enable = false;
-  boot.loader.efi.canTouchEfiVariables = false;
-  boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub = {
-  enable = true;
-  efiSupport = true;
-  devices = ["nodev"];
-  useOSProber = true;
+    
 };
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages;
+
    #networking.hostName = "nixos"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
@@ -53,10 +42,7 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-   services.pipewire = {
-     enable = true;
-     pulse.enable = true;
-   };
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -83,8 +69,7 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -131,12 +116,6 @@ hardware.nvidia = {
   nvidiaSettings = true;
 };
 
-hardware = {
-  bluetooth.enable = true; # enables support for Bluetooth
-  bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-};
-
-
 #teclado
 
 services.xserver = {
@@ -157,8 +136,7 @@ services.xserver = {
 
   nixpkgs.config.allowUnfree = true;
 
-#timezone
-time.timeZone = "America/Sao_Paulo";
+
 
 environment.systemPackages = [
   pkgs.vim
@@ -174,16 +152,12 @@ environment.systemPackages = [
   pkgs.openobex
   pkgs.obexftp
 
-  #pkgs.vscode
+
 
   pkgs.btop
 
   pkgs.spotdl
   pkgs.usbutils
-
-  #iPod
-  
-  #pkgs.git
 
 ];
 #Locale

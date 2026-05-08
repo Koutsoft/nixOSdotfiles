@@ -1,14 +1,14 @@
 { pkgs, ... }: {
   imports = [
-    #./hardware-configuration.nix
+  
     ./configuration.nix
     ./packages
     ./networking
     ./packages
-  #./utils.nix
+ ./localization 
   ./apple
   ./chat
-  #./shells
+ 
   ./hardware 
   ];
 }
