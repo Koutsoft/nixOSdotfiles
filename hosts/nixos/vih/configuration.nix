@@ -13,9 +13,9 @@
     home-manager.useUserPackages = true;
     home-manager.useGlobalPkgs = true;
     home-manager.backupFileExtension = "backup";
-    home-manager.users.vih = import ../../../common/homeManagerModules/home.nix; 
+    home-manager.users.vih = import ../../../common/homeManagerModules/home.nix;  
     
-};
+
 
 
    #networking.hostName = "nixos"; # Define your hostname.
