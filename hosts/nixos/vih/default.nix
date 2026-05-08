@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   imports = [
-    ./hardware-configuration.nix
+    #./hardware-configuration.nix
     ./configuration.nix
     ./packages
     ./networking
@@ -9,6 +9,6 @@
   ./apple
   ./chat
   #./shells
-  ./hardware
+  ./hardware 
   ];
 }

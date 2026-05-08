@@ -2,5 +2,6 @@
 { ... }: {
   imports = [
     ./keyboard.nix
+    ./hardware-configuration.nix
   ];
 }
