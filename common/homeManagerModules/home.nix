@@ -5,7 +5,7 @@
 imports = [
 ./alacritty
 ./startship
-./coding/vscode
+./coding/vscode/vscode.nix
 ];
 
   home.username = "vih";
