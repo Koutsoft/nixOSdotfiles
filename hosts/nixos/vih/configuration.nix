@@ -160,9 +160,7 @@ environment.systemPackages = [
   pkgs.usbutils
 
 ];
-#Locale
 
-i18n.defaultLocale = "pt_BR.UTF-8";
 
 #plasma
 services = {

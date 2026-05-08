@@ -7,6 +7,9 @@ in
   programs.zsh.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent.enable = true;
+  programs.gnupg.agent.enableSSHSupport = true;
+  services.pcscd.enable = true;
+  services.udev.packages = [ pkgs.yubikey-personalization pkgs.libu2f-host ];
   services.gnome.gnome-keyring.enable = true;
   environment.systemPackages = let 
     osx-kvm = with pkgs; [ dmg2img libguestfs p7zip ];
@@ -15,6 +18,7 @@ in
     #nix-alien = inputs.nix-alien.packages.${system}.nix-alien;
    # tundra = inputs.tundra.packages.${system};
     in [
+      yubikey-manager
       swww
       wl-clipboard
       xdg-utils
