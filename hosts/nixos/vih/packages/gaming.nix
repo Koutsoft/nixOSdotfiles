@@ -35,6 +35,9 @@
       cups
       dosbox
       dxvk
+
+      #yu-gi-oh
+      edopro
     ];
     emulators = with unstable; [
       (retroarch.withCores (cores: with cores; [ mgba dolphin pcsx2 nestopia ]))
