@@ -8,6 +8,7 @@
  ./localization 
   ./apple
   ./chat
+  ./notes
  
   ./hardware 
   ];
