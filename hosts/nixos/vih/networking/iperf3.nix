@@ -1,6 +1,7 @@
 { pkgs, inputs, system, ... }:
 
-{environment.systemPackages = [
-  iperf3
-];
+{
+  environment.systemPackages = with pkgs; [
+    iperf3
+  ];
 }
