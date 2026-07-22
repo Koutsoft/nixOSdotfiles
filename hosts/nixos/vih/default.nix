@@ -9,6 +9,7 @@
   ./apple
   ./chat
   ./programing
+  ./obsidian
  
   ./hardware 
   ];}
