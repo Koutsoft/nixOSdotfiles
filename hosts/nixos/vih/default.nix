@@ -8,7 +8,6 @@
  ./localization 
   ./apple
   ./chat
-  ./
   ./programing
  
   ./hardware 
