@@ -11,11 +11,15 @@ in
   services.pcscd.enable = true;
   services.udev.packages = [ pkgs.yubikey-personalization pkgs.libu2f-host ];
   services.gnome.gnome-keyring.enable = true;
-   programs.nix-ld.libraries = with pkgs; [
+
+  # --- CONFIGURAÇÃO DO NIX-LD (FOCOU FORA DOS COLCHETES) ---
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
     zlib
     stdenv.cc.cc
     # Adicione outras bibliotecas se algum SDK específico exigir
   ];
+
   environment.systemPackages = let 
     osx-kvm = with pkgs; [ dmg2img libguestfs p7zip ];
   in with pkgs;
@@ -103,7 +107,5 @@ in
       nodejs_22
       cargo
       cargo-info
-
-      programs.nix-ld.enable = true;
     ] ++ osx-kvm;
 }
