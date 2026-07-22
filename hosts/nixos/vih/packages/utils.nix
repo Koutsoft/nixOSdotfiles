@@ -98,5 +98,12 @@ in
       nodejs_22
       cargo
       cargo-info
+
+      programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    zlib
+    stdenv.cc.cc
+    # Adicione outras bibliotecas se algum SDK específico exigir
+  ];
     ] ++ osx-kvm;
 }
