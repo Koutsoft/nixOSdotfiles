@@ -17,6 +17,17 @@ in
   programs.nix-ld.libraries = with pkgs; [
     zlib
     stdenv.cc.cc
+      gtk3
+  gtk4
+  glib
+  cairo
+  pango
+  atk
+  gdk-pixbuf
+  xorg.libX11
+  xorg.libXtst
+  xorg.libXi
+  xorg.libXrender
     # Adicione outras bibliotecas se algum SDK específico exigir
   ];
 

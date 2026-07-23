@@ -1,6 +1,6 @@
 { pkgs, inputs, system, ... }:
 {
   environment.systemPackages = with pkgs; [
-    nodejs
+    nodejs_24
   ];
 }
