@@ -1,1 +1,1 @@
-{imports = [ ./nodejs.nix ]; }
+{imports = [ ./nodejs.nix ./dbeaver.nix ./insomnia.nix]; }
