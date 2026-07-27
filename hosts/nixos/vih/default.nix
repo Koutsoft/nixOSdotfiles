@@ -10,6 +10,6 @@
   ./chat
   ./programing
   ./notes
- 
+  ./hacking
   ./hardware 
   ];}
