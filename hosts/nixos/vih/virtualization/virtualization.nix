@@ -4,6 +4,7 @@
     virt-viewer
     virt-top
     nixos-shell
+    dnsmasq
   ];
   virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
