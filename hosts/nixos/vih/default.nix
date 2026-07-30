@@ -12,4 +12,5 @@
   ./notes
   ./hacking
   ./hardware 
+  ./backuping
   ];}
