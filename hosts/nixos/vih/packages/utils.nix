@@ -108,6 +108,11 @@ in
       qrrs
       lm_sensors
 
+      gvfs
+      gvfs-smb
+      gvfs-gphoto2
+      gvfs-mtp
+      gvfs-nfs
       tree
 
       fzf
